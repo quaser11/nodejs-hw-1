@@ -3,7 +3,7 @@ import { writeContacts } from '../utils/writeContacts.js';
 
 const generateContacts = async (number) => {
   for (let i = 0; i < number; i++) {
-    await writeContacts(JSON.stringify(createFakeContact()));
+    await writeContacts(createFakeContact());
   }
 };
 

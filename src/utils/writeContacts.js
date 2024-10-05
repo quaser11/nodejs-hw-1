@@ -10,7 +10,7 @@ export const writeContacts = async (updatedContacts) => {
   if (updatedContacts !== '[]' && !Array.isArray(updatedContacts)) {
     array.push(updatedContacts);
 
-    await fs.writeFile(PATH_DB, JSON.stringify(array, null, 2), (err) => {
+    await fs.writeFile(PATH_DB, JSON.stringify(array), null, 2, (err) => {
       if (err) throw err;
       console.log(`Successfully created contacts ${updatedContacts}`);
     });
@@ -21,7 +21,7 @@ export const writeContacts = async (updatedContacts) => {
     });
   } else if (Array.isArray(updatedContacts)) {
     array = updatedContacts;
-    await fs.writeFile(PATH_DB, JSON.stringify(array, null, 2), (err) => {
+    await fs.writeFile(PATH_DB, JSON.stringify(array), null, 2, (err) => {
       if (err) throw err;
       console.log(`Successfully updated contacts`);
     });
